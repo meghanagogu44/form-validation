@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>forms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form onsubmit="return validateform()">
+      <table  align="center" >
+        <tr>
+          <td><label for="name">Name:</label></td>
+         </tr>
+         <tr>
+         <td> <input type="text" id="name" placeholder="Name"><br>
+         <span id="nameerror" style="color: red; font-size: 14px;"></span> </td>
+        </tr>
+            <tr>
+          <td><label for="email">Email:</label>
+               </td>
+         </tr>
+         <tr>
+         <td> <input type="email" id="email" placeholder="email"><br>
+                <span id="emailerror" style="color: red; font-size: 14px;"></span></td> 
+        
+
+         </tr>
+            <tr>
+          <td><label for="phno">Phone No:</label></td>
+         </tr>
+         <tr>
+         <td> <input type="phone" id="phno" placeholder="95********"><br>
+                <span id="phoneerror" style="color: red; font-size: 14px;"></span></td> 
+      
+
+         </tr>
+            <tr>
+          <td><label for="name">message</label></td>
+         </tr>
+         <tr>
+         <td> <input type="text" id="message" placeholder="message"></td> 
+         
+
+         </tr>
+        <tr>
+          <td>
+           <button type="submit" id="button">submit</button>
+          </td>
+         </tr>
+      </table>
+      </form>
+      <script>
+        function validateform(){
+          let valid=true;
+          if (valid) {
+    alert("Successfully Form Submitted");
+    return true; // form will submit
+      } else {
+    event.preventDefault();
+    return false;
+    }
+
+          //for name 
+         let name = document.getElementById("name").value.trim();
+         if(name.length <3)
+         {
+          document.getElementById("nameerror").innerHTML="please enter valid name";
+           event.preventDefault();
+         }
+        else{
+          document.getElementById("nameerror").innerText="";
+        }
+        //for email
+        let email=document.getElementById("email").value.trim();
+        let emailpattern= /^[_a-zA-Z0-9.-]+@gmail\.com$/;
+        if(!emailpattern .test(email))
+        {
+           document.getElementById("emailerror").innerHTML="please enter valid email";
+           valid=false;
+       }
+       else{
+            document.getElementById("emailerror").innerText="";
+       }
+       //phone
+       let phone =document.getElementById("phno").value.trim();
+        if (!/^\d{10}$/.test(phone)){
+          document.getElementById("phoneerror").innerHTML="please enter  0 to 9 valid digits  ";
+          valid=false;
+
+        }
+        else{
+          document.getElementById("phoneerror").innerText="";
+        }
+           return valid;
+        }
+      </script>
+</body>
+</html>
