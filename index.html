@@ -85,17 +85,14 @@
         else{
           document.getElementById("phoneerror").innerText="";
         }
-          
-        if(!valid){
-        event.preventDefault();
-        return false;
-    }
-
-    // If valid, show success alert
-       
+          return valid;
+    if(valid);{
     alert("Successfully Form Submitted😊");
     return true;
-}
+} 
+else {
+        event.preventDefault();
+         return false;
       </script>
 </body>
 </html>
