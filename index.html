@@ -8,7 +8,7 @@
 </head>
 <body>
   <form onsubmit="return validateform()">
-      <table  align="center" >
+      <table  align="center">
         <tr>
           <td><label for="name">Name:</label></td>
          </tr>
@@ -51,12 +51,12 @@
       </table>
       </form>
       <script>
-        function validateform(event) {
+        function validateform(event){
         let valid = true;
 
    //for name 
          let name = document.getElementById("name").value.trim();
-         if(name.length <3)
+         if(name.length<3)
          {
           document.getElementById("nameerror").innerHTML="please enter valid name";
            event.preventDefault();
@@ -92,7 +92,7 @@
     }
 
     // If valid, show success alert
-       valid = true;
+       
     alert("Successfully Form Submitted😊");
     return true;
 }
