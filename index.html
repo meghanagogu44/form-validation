@@ -58,10 +58,7 @@
     // validations here...
     // if any error found -> valid = false;
 
-    
-
-
-          //for name 
+   //for name 
          let name = document.getElementById("name").value.trim();
          if(name.length <3)
          {
@@ -93,12 +90,14 @@
           document.getElementById("phoneerror").innerText="";
         }
            return valid;
-        }
-    if (valid) {
-        alert("Successfully Form Submitted");
-        return true;
+        if (!valid) {
+        event.preventDefault();
+        return false;
     }
-    return false;
+
+    // If valid, show success alert
+    alert("Successfully Form Submitted");
+    return true;
 }
       </script>
 </body>
