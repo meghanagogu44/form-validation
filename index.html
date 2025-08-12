@@ -52,11 +52,7 @@
       </form>
       <script>
         function validateform(event) {
-    event.preventDefault();
-    let valid = true;
-
-    // validations here...
-    // if any error found -> valid = false;
+        let valid = true;
 
    //for name 
          let name = document.getElementById("name").value.trim();
@@ -89,7 +85,7 @@
         else{
           document.getElementById("phoneerror").innerText="";
         }
-           return valid;
+          
         if (!valid) {
         event.preventDefault();
         return false;
