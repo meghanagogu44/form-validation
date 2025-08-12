@@ -78,7 +78,7 @@
        //phone
        let phone =document.getElementById("phno").value.trim();
         if (!/^\d{10}$/.test(phone)){
-          document.getElementById("phoneerror").innerHTML="please enter  0 to 9 valid digits  ";
+          document.getElementById("phoneerror").innerHTML="please enter  0 to 9 valid digits";
           valid=false;
 
         }
@@ -86,7 +86,7 @@
           document.getElementById("phoneerror").innerText="";
         }
           
-        if (!valid) {
+        if(!valid){
         event.preventDefault();
         return false;
     }
