@@ -51,15 +51,20 @@
       </table>
       </form>
       <script>
-        function validateform(){
-          let valid=true;
-          if (valid) {
-    alert("Successfully Form Submitted");
-    return true; // form will submit
-      } else {
+        function validateform(event) {
     event.preventDefault();
-    return false;
+    let valid = true;
+
+    // validations here...
+    // if any error found -> valid = false;
+
+    if (valid) {
+        alert("Successfully Form Submitted");
+        return true;
     }
+    return false;
+}
+
 
           //for name 
          let name = document.getElementById("name").value.trim();
